@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "0.0.0",
+  "description": "openclassroom_project_03",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thxDuck/DylanPelle_3_05022021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thxDuck/DylanPelle_3_05022021/issues"
+  },
+  "homepage": "https://github.com/thxDuck/DylanPelle_3_05022021#readme",
+  "dependencies": {
+    "sass": "^1.32.6"
+  }
+}

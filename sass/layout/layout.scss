@@ -1,0 +1,68 @@
+body {
+    margin: 0px;
+}
+section {
+    
+}
+
+.presentation {
+    @extend %flex-column;
+    padding-bottom: 50px;
+    text-align: center;
+
+    &__localisation {
+        padding: 1px;
+    }
+
+    &__txt {
+    
+    padding: 20px;
+        &--heading {
+            font-weight: bold;
+            font-size: 1.7em;
+        }
+    }
+}
+.operation {
+    @extend %flex-column;
+    padding: 10px;
+    padding-bottom: 50px;
+    &__steps {
+        @extend %flex-column;
+        align-items: center;
+        justify-content: space-around;
+        height: 300px; 
+       
+    }
+}
+
+.restaurant {
+    @extend %flex-column;
+    padding: 10px;
+    padding-bottom: 50px;
+
+    &__list {
+        @extend %flex-column;
+        align-items: center;
+    }
+}
+.footer {
+    @extend %flex-column;
+    padding: 15px;
+    padding-bottom: 25px;
+    &__heading {
+        color: white
+    }
+    &__txt {
+        @extend %flex-column;
+    }
+    a {
+        text-decoration: none;
+        margin-bottom:10px;
+        color: white;
+        i {
+            width: 10px;
+            margin-right: 15px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+
+* {
+    font-family: $default;
+}
+.txt {
+
+    &--heading {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    &--bold {
+        font-weight: bold;
+    }
+    &--title {
+        font-family: $title;
+    }
+    &--center {
+        text-align: center;
+    }
+    &--light {
+        color: darken($gray, 45%);
+    }
+}
+.heading {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 1.2rem;
+    
+    
+}

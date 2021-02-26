@@ -1,0 +1,13 @@
+.bg {
+    &--gray{
+        background-color: $gray;
+        &--darker {
+            background: darken($gray,10%);
+        }
+    }
+    &--dark {
+        background: darken($gray,60%);   
+    }
+    
+
+}

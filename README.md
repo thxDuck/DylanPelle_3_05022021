@@ -24,9 +24,10 @@ This website will be user-friendly and animated.
 - Firefox
 
 
-## Starting project
+## project life
  
 - Init GitHub and project 05 february 2021
+- Home structure OK on 26 february 2021, push on "structure" branch
 
 ---
 
