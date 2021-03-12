@@ -1,32 +1,58 @@
 body {
     margin: 0px;
 }
-section {
-    
-}
 
+.header {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 35px;
+    &__back {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    &__heading {
+        @include title(2rem);
+        margin: auto;   
+    }
+}
+.restaurant__img {
+    width: 100%;
+    height: calc(100%*width);
+}
 .presentation {
-    @extend %flex-column;
-    padding-bottom: 50px;
+    @extend %column-box;
     text-align: center;
+    padding-top: 0px;
 
     &__localisation {
-        padding: 1px;
-    }
-
-    &__txt {
-    
-    padding: 20px;
-        &--heading {
-            font-weight: bold;
-            font-size: 1.7em;
+        background-color: darken($gray, 5%);
+        margin-left: -10px;
+        margin-right: -10px;
+        box-shadow: inset 0px 3px 3px 0px darken($gray, 20%), 5px 5px 15px 5px rgba(0,0,0,0);;
+        p i {
+         margin-right: 15px;   
         }
     }
+    &__text {
+        padding: 20px;
+        &__heading {
+            font-weight: bold;
+            font-size: 1.7em;
+            }
+        &__description {
+            margin-top:0px;
+            @extend %text-light;
+        }  
+    }
+
+    
 }
+
 .operation {
-    @extend %flex-column;
-    padding: 10px;
-    padding-bottom: 50px;
+    @extend %column-box;
     &__steps {
         @extend %flex-column;
         align-items: center;
@@ -37,19 +63,47 @@ section {
 }
 
 .restaurant {
-    @extend %flex-column;
-    padding: 10px;
-    padding-bottom: 50px;
+    @extend %column-box;
 
     &__list {
         @extend %flex-column;
         align-items: center;
     }
 }
+
+.menu {
+    @extend %column-box;
+    margin-top: -25px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    &__heading {
+        @include title(1.7rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+         i {
+             margin-right: 25px;
+         }
+    }
+    &__command{
+      
+        margin-top: 50px;
+        width: 50%;
+    }
+}
+
+.meal-parts {
+    margin-bottom: 45px;
+    &__heading {
+        @extend .txt--heading;
+        @extend .txt--uppercase;
+        color: darken($gray, 45%);
+    }
+}
+
+
 .footer {
-    @extend %flex-column;
-    padding: 15px;
-    padding-bottom: 25px;
+    @extend %column-box;
     &__heading {
         color: white
     }
@@ -66,3 +120,6 @@ section {
         }
     }
 }
+
+
+

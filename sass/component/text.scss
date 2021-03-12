@@ -2,10 +2,15 @@
 * {
     font-family: $default;
 }
+a {
+    text-decoration: none;
+    margin-bottom:10px;
+    color: black;
+}
 .txt {
 
     &--heading {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         font-weight: bold;
     }
     &--bold {
@@ -20,9 +25,12 @@
     &--light {
         color: darken($gray, 45%);
     }
+    &--uppercase {
+        text-transform: uppercase;
+    }
 }
 .heading {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: bold;
 }
 
