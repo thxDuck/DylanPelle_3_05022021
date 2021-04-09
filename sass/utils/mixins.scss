@@ -3,3 +3,8 @@
     font-size: $size;
     font-weight: bold;
 }
+@mixin txtEllipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

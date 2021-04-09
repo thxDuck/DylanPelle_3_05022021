@@ -1,39 +1,41 @@
 body {
-    margin: 0px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     display: flex;
-    align-items: center;
-
+    align-items: flex-end;
+    height: 35px;
     margin-bottom: 10px;
     padding: 10px;
-    height: 35px;
+
     &__back {
         font-size: 1.2rem;
         font-weight: bold;
+        display: flex;
+        margin-top: auto;
+        margin-bottom: auto; 
     }
     &__heading {
         @include title(2rem);
-        margin: auto;   
+        margin: auto;
     }
 }
-.restaurant__img {
-    width: 100%;
-    height: calc(100%*width);
-}
+
 .presentation {
     @extend %column-box;
-    text-align: center;
-    padding-top: 0px;
+    // text-align: center;
+    padding-top: 0;
 
     &__localisation {
         background-color: darken($gray, 5%);
         margin-left: -10px;
         margin-right: -10px;
-        box-shadow: inset 0px 3px 3px 0px darken($gray, 20%), 5px 5px 15px 5px rgba(0,0,0,0);;
+        box-shadow: inset 0 3px 3px 0 darken($gray, 20%), 5px 5px 15px 5px rgba(0, 0, 0, 0);
         p i {
-         margin-right: 15px;   
+            margin-right: 15px;
         }
     }
     &__text {
@@ -41,14 +43,12 @@ body {
         &__heading {
             font-weight: bold;
             font-size: 1.7em;
-            }
+        }
         &__description {
-            margin-top:0px;
+            margin-top: 0;
             @extend %text-light;
-        }  
+        }
     }
-
-    
 }
 
 .operation {
@@ -57,8 +57,17 @@ body {
         @extend %flex-column;
         align-items: center;
         justify-content: space-around;
-        height: 300px; 
-       
+        height: 300px;
+
+        @media(min-width: $tab-width) {
+            flex-direction: row;
+            justify-content: space-around;
+            height: 150px;
+            .step__box {
+                width: 27%;
+                height: 50px;
+            }
+        }
     }
 }
 
@@ -67,59 +76,118 @@ body {
 
     &__list {
         @extend %flex-column;
-        align-items: center;
+
+        &__row {
+            @extend %flex-column;
+            align-items: center;
+            width: 100%;
+
+            @media(min-width: $tab-width) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 30px;
+                .restaurant__card {
+                    min-width: 460px;
+                    max-width: 500px;
+                    margin: auto auto 15px;
+                }
+            }
+        }
     }
 }
 
+.restaurant__img {
+    display: flex;
+    overflow: hidden;
+    max-height: 450px;
+    img {
+        width: 100%;
+        position: relative;
+        z-index: -9999;
+    }
+    @media(min-width: $tab-width) {
+        height: 848px;
+        max-height: 848px;
+        &__img {
+            transform: scale(2);
+        }
+    }
+}
 .menu {
     @extend %column-box;
+    @extend %bg--gray;
     margin-top: -25px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+
     &__heading {
         @include title(1.7rem);
         display: flex;
         justify-content: space-between;
         align-items: center;
-         i {
-             margin-right: 25px;
-         }
-    }
-    &__command{
-      
-        margin-top: 50px;
-        width: 50%;
-    }
-}
-
-.meal-parts {
-    margin-bottom: 45px;
-    &__heading {
-        @extend .txt--heading;
-        @extend .txt--uppercase;
-        color: darken($gray, 45%);
-    }
-}
-
-
-.footer {
-    @extend %column-box;
-    &__heading {
-        color: white
-    }
-    &__txt {
-        @extend %flex-column;
-    }
-    a {
-        text-decoration: none;
-        margin-bottom:10px;
-        color: white;
         i {
-            width: 10px;
-            margin-right: 15px;
+            margin-right: 25px;
+        }
+    }
+
+    &__list {
+        @extend %column-box;
+        .meal-parts {
+            margin-bottom: 45px;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            &__heading {
+                @extend .txt--heading;
+                @extend .txt--uppercase;
+                color: darken($gray, 45%);
+                &--underline {
+                    width: 50px;
+                    height: 4px;
+                    background-color: $thirdColor;
+                    margin-top: -12px;
+                }
+            }
+        }
+    }
+
+    @media(min-width: $tab-width) {
+        position: absolute;
+        width: 100%;
+        top: 298px;
+        background-color: #f7f7f7b7;
+
+        &__list {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-around;
+            .vertical-bar {
+                display: block;
+            }
+            .meal-parts {
+                max-width: 30%;
+            }
         }
     }
 }
 
-
-
+.footer {
+    @extend %column-box;
+    @extend %bg--dark;
+    padding-left: 0;
+    &__heading {
+        color: white;
+    }
+    li {
+        list-style: none;
+        a {
+            text-decoration: none;
+            margin-bottom: 10px;
+            color: white;
+            i {
+                width: 10px;
+                margin-right: 15px;
+            }
+        }
+    }
+}

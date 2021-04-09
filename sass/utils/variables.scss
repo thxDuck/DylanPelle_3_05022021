@@ -5,9 +5,10 @@ $primaryColorLight: lighten(#9356DC, 5%);
 
 $secondaryColor: #FF79DA;
 $secondaryColorLight: lighten(#FF79DA, 5%);
-$thirdColor: #99E2D0;
-$gray: #f7f7f7;
 
+$thirdColor: #99E2D0;
+
+$gray: #f7f7f7;
 
 // Fonts
 $title: 'Shrikhand';
@@ -15,4 +16,4 @@ $default: 'Roboto';
 
 // sizes 
 $radius: 20px;
-$max-width-cards: 358px;
+$tab-width: 1024px;
